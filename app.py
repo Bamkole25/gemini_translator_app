@@ -5,7 +5,8 @@ import google.generativeai as genai
 st.title("🌍 Gemini-Powered Language Translator")
 
 # === API Key Configuration ===
-api_key = st.text_input("🔐 Enter your Gemini API Key", type="password")
+#api_key = st.text_input("🔐 Enter your Gemini API Key", type="password")
+api_key = st.secrets["GOOGLE_API_KEY"]
 if api_key:
     genai.configure(api_key=api_key)
     model = genai.GenerativeModel('gemini-2.0-flash')
